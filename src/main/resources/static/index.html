@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Bible Verse Search</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="dark">
+
+<div class="container">
+
+<div class="topbar">
+
+<h1>Bible Verse Search</h1>
+
+<button id="themeToggle">☀️</button>
+
+</div>
+
+<form id="searchForm">
+
+<input
+type="text"
+id="keyword"
+placeholder="Search Bible verses..."
+required
+>
+
+<button type="submit">Search</button>
+
+</form>
+
+<div id="spinner" class="spinner hidden"></div>
+
+<div id="results"></div>
+
+<div class="pagination">
+
+<button id="prevBtn">Previous</button>
+
+<span id="pageInfo"></span>
+
+<button id="nextBtn">Next</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
