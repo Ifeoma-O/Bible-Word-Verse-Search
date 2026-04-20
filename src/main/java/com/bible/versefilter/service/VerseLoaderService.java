@@ -1,6 +1,5 @@
 package com.bible.versefilter.service;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Profile;
 import com.bible.versefilter.model.Verse;
 import com.bible.versefilter.repository.VerseRepository;
@@ -21,7 +20,7 @@ import java.util.List;
 
 @Service
 @Profile("!test")
-public class VerseLoaderService implements CommandLineRunner{
+public class VerseLoaderService {
     private static final Logger log = LoggerFactory.getLogger(VerseLoaderService.class);
 
     private final VerseRepository verseRepository;
@@ -76,33 +75,4 @@ public class VerseLoaderService implements CommandLineRunner{
         }
     }
 
-    @Override
-    public void run(String... args) throws Exception {
-
-        // if (verseRepository.count() > 0) {
-        //     System.out.println("Verses already loaded.");
-        //     return;
-        // }
-
-        // InputStream inputStream = getClass()
-        //         .getClassLoader()
-        //         .getResourceAsStream("bible.csv");
-
-        // BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-        // reader.lines().skip(1).forEach(line -> {
-
-        //     String[] parts = line.split(",", 4);
-
-        //     Verse verse = new Verse();
-        //     verse.setBook(parts[0]);
-        //     verse.setChapter(Integer.parseInt(parts[1]));
-        //     verse.setVerse(Integer.parseInt(parts[2]));
-        //     verse.setText(parts[3]);
-
-        //     verseRepository.save(verse);
-        // });
-
-        // System.out.println("CSV loaded successfully!");
-    }
 }

@@ -19,11 +19,8 @@ public interface VerseRepository extends JpaRepository<Verse, Long>{
     );
 
     @Query(value = """
-        SELECT *,
-           ts_rank(search_vector, plainto_tsquery('english', :keyword)) AS rank
-        FROM verses
+        SELECT * FROM verses
         WHERE search_vector @@ plainto_tsquery('english', :keyword)
-        ORDER BY rank DESC
         """,
         countQuery = """
         SELECT count(*) FROM verses
